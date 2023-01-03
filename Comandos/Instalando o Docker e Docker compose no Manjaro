@@ -1,1 +1,21 @@
-##
+#atualizando a lista de pacotes disponíveis
+sudo pacman -Sy
+
+#instalando o docker e o docker compose
+sudo pacman -S docker docker-compose
+
+#Adicionando o usuário ao grupo "docker" para poder executar o Docker sem precisar de privilégios de administrador
+sudo usermod -aG docker $USER
+
+#Iniciando o daemon do Docker
+sudo systemctl start docker
+
+#Se você quiser que o Docker seja iniciado automaticamente no boot, execute o seguinte comando
+sudo systemctl enable docker
+
+#Verificandp se o Docker está funcionando corretamente, executando o seguinte comando:
+docker run hello-world
+
+
+
+
