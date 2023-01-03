@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+    volumes:
+      - db-data:/var/lib/mysql
+
+  app:
+    image: php:7.2-apache
+    volumes:
+      - ./src:/var/www/html
+    depends_on:
+      - db
+    links:
+      - db
+
+volumes:
+  db-data:
