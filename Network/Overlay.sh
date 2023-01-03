@@ -10,3 +10,5 @@
     docker network disconnect 
     #remove uma rede overlay.
     docker network rm 
+
+ docker service e docker stack #para gerenciar serviços e stacks em uma rede overlay.
